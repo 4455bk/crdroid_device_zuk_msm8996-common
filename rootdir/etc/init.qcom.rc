@@ -47,6 +47,18 @@ on init
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+    write /dev/stune/foreground/schedtune.boost 10
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 10
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /sys/class/kgsl/kgsl-3d0/throttling 0
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
+    setprop debug.sqlite.journalmode OFF
+    setprop debug.sqlite.syncmode OFF
+    setprop debug.sqlite.wal.syncmode OFF
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/iostats 0
+    write /sys/module/lowmemorykiller/parameters/debug_level 0
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
