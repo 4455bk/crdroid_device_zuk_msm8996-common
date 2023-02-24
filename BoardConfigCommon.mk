@@ -43,6 +43,8 @@ BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_SOURCE := kernel/zuk/msm8996
+TARGET_KERNEL_BUILD_HOST := Ubuntu
+TARGET_KERNEL_BUILD_USER := "Runds"
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
