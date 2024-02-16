@@ -304,6 +304,7 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
+    libminijail:32 \
     libmm-omxcore
 
 ## Partitions
