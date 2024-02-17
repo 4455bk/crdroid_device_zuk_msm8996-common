@@ -59,6 +59,12 @@ on init
     write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sda/queue/iostats 0
     write /sys/module/lowmemorykiller/parameters/debug_level 0
+    write /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma 2500
+    write /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma 2500
+    write /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma 2500
+    write /sys/class/power_supply/battery/constant_charge_current_max 2500000
+    write /sys/class/power_supply/battery/input_current_max 2500000
+    write /sys/module/qpnp_fg/parameters/sram_update_period_ms 1000
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
