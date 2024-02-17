@@ -135,6 +135,10 @@ function blob_fixup() {
         sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
         ;;
 
+    vendor/bin/pm-service)
+        grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
+        ;;
+
     # Rename vulkan.msm8953
     vendor/lib/hw/vulkan.msm8996.so | vendor/lib64/hw/vulkan.msm8996.so)
         "${PATCHELF}" --set-soname "vulkan.msm8996.so" "${2}"
